@@ -5,7 +5,10 @@ import $ from '../../assets/js/jquery.min.js';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  host:{
+    "(window:resize)":"onWindowResize($event)"
+  }
 })
 export class HomeComponent implements OnInit {
 
@@ -67,6 +70,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.type();
+  }
+
+  width:Number=window.innerWidth;
+  height:Number=window.innerHeight;
+  isMobile:Boolean=false;
+
+  onWindowResize(event){
+    this.width=window.innerWidth;
+    this.height=window.innerHeight;
+    this.isMobile=this.width<this.height;
   }
 
 }

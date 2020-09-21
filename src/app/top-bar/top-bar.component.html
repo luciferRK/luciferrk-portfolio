@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="luciferrk-navbar-brand">
-          <a class="luciferrk-logo" href="index.html"><span class="logo-img" style="background-image: url('../../assets/images/name_logo_white.png');"></span>Likhith R Kulal</a>
+          <a *ngIf="isMobile==false" class="luciferrk-logo" href="index.html"><span class="logo-img" style="background-image: url('../../assets/images/name_logo_white.png');"></span>Likhith R Kulal</a>
+          <a *ngIf="isMobile" class="luciferrk-logo" href="index.html"><span class="logo-img" style="background-image: url('../../assets/images/name_logo_white.png');"></span>Likhith R</a>
         </div>
         <a href="#" class="js-colorlib-nav-toggle luciferrk-nav-toggle"><i></i></a>
       </div>
