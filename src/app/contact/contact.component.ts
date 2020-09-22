@@ -6,7 +6,10 @@ import $ from '../../assets/js/jquery.min.js';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  host:{
+    "(window:resize)":"onWindowResize($event)"
+  }
 })
 export class ContactComponent implements OnInit {
 
@@ -80,5 +83,16 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  width:Number=window.innerWidth;
+  height:Number=window.innerHeight;
+  isMobile:Boolean=false;
+
+  onWindowResize(event){
+    this.width=window.innerWidth;
+    this.height=window.innerHeight;
+    this.isMobile=this.width<this.height;
+  }
+
 
 }

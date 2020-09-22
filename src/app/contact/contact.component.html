@@ -14,15 +14,15 @@
     <section class="ftco-section contact-section">
       <div class="container mt-5">
         <div class="row d-flex mb-5 contact-info">
-          <!-- <div class="col-md-12 mb-4">
+          <div *ngIf="isMobile" class="col-md-12 mb-4">
             <h2 class="h4">Contact Information</h2>
-          </div> -->
+          </div>
           <div class="wrap">
             <div class="about-desc">
               <h1 class="bold-text">Contact</h1>
             </div>
           </div>
-          <div style="height:9em"></div>
+          <div *ngIf="isMobile==false" style="height:9em"></div>
           <div class="w-100"></div>
           <div class="col-md-3">
             <p><span>Address:</span> Sri Lakshmi, Vivekanagar, Kulur, Mangalore-575013</p>
